@@ -159,7 +159,7 @@ function itemHTML(p, i, sizes) {
         ? Object.keys(sizes).map(k => `<span class="item-price price-col">${p[k] || ''}</span>`).join('')
         : `<span class="item-price">${p.p}</span>`;
     return `
-        <div class="item" style="--i:${i}">
+        <div class="item${sizes ? ` cols-${Object.keys(sizes).length}` : ''}" style="--i:${i}">
             <div class="item-head">
                 <span class="item-name">${p.name}${p.size ? `<span class="item-size">${p.size}</span>` : ''}</span>
                 <span class="item-dots"></span>
@@ -202,7 +202,7 @@ function renderMenu() {
         let i = 0;
         const sections = c.sections.map(s => `
             ${s.title ? `<h3 class="subsection-title">${s.title}</h3>` : ''}
-            ${s.sizes ? `<div class="size-head">${Object.values(s.sizes).map(t => `<span>${t}</span>`).join('')}</div>` : ''}
+            ${s.sizes ? `<div class="size-head cols-${Object.keys(s.sizes).length}">${Object.values(s.sizes).map(t => `<span>${t}</span>`).join('')}</div>` : ''}
             ${s.data.map(p => itemHTML(p, i++, s.sizes)).join('')}
         `).join('');
         return `

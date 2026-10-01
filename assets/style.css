@@ -157,12 +157,13 @@ body {
 .subsection-title::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(245, 177, 42, 0.5), transparent); }
 
 .size-head { display: flex; justify-content: flex-end; padding: 16px 0 0; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
-.size-head span, .price-col { width: 4.6rem; text-align: right; }
-/* Tre colonne (normale / calzone / famiglia): più strette sui telefoni */
-@media (max-width: 480px) {
-    .size-head:has(span:nth-child(3)) span, .item-head:has(.price-col + .price-col + .price-col) .price-col { width: 4.1rem; font-size: 0.95rem; }
-    .size-head:has(span:nth-child(3)) { font-size: 0.62rem; letter-spacing: 0.04em; }
-}
+.size-head span, .price-col { flex: none; width: var(--col, 4.6rem); text-align: right; }
+/* Tre colonne (normale / calzone / famiglia): colonne più strette, mai compresse dal nome */
+.cols-3 { --col: 4.4rem; }
+.size-head.cols-3 { font-size: 0.6rem; letter-spacing: 0.02em; }
+.item.cols-3 .item-price { font-size: 0.9rem; }
+.item.cols-3 .item-dots { display: none; }
+.item.cols-3 .item-name { flex: 1; padding-right: 6px; }
 
 /* --- Voci di menù --- */
 .item {
