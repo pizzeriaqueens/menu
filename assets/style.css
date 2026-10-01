@@ -158,6 +158,11 @@ body {
 
 .size-head { display: flex; justify-content: flex-end; padding: 16px 0 0; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
 .size-head span, .price-col { width: 4.6rem; text-align: right; }
+/* Tre colonne (normale / calzone / famiglia): più strette sui telefoni */
+@media (max-width: 480px) {
+    .size-head:has(span:nth-child(3)) span, .item-head:has(.price-col + .price-col + .price-col) .price-col { width: 4.1rem; font-size: 0.95rem; }
+    .size-head:has(span:nth-child(3)) { font-size: 0.62rem; letter-spacing: 0.04em; }
+}
 
 /* --- Voci di menù --- */
 .item {

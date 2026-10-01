@@ -18,29 +18,30 @@ const allergeni = {
     'M': { icon: '🦑', name: 'Molluschi' }
 };
 
+// p = pizza normale, c = calzone, f = formato famiglia (vuoto se non disponibile)
 const pizzeData = [
-    { name: "Marinara", ing: "Pomodoro, aglio, origano, olio EVO", p: "€ 4,00", all: ['G'] },
-    { name: "Margherita", ing: "Pomodoro, mozzarella, basilico", p: "€ 5,00", all: ['G', 'L'] },
-    { name: "Margherita Extra", ing: "Pomodoro, mozzarella di bufala, basilico", p: "€ 7,00", all: ['G', 'L'] },
-    { name: "Napoli / Napoletana", ing: "Pomodoro, mozzarella, acciughe, origano, capperi", p: "€ 6,00", all: ['G', 'L', 'P'] },
-    { name: "Diavola", ing: "Pomodoro, mozzarella, salame piccante, olive", p: "€ 6,50", all: ['G', 'L'] },
-    { name: "Quattro Stagioni", ing: "Pomodoro, mozzarella, prosciutto cotto, funghi, carciofi, olive", p: "€ 7,00", all: ['G', 'L'] },
-    { name: "Capricciosa", ing: "Pomodoro, mozzarella, prosciutto cotto, funghi, carciofi, olive, salame piccante", p: "€ 7,50", all: ['G', 'L'] },
-    { name: "Prosciutto e Funghi", ing: "Pomodoro, mozzarella, prosciutto cotto, funghi", p: "€ 6,50", all: ['G', 'L'] },
-    { name: "Tonno e Cipolla", ing: "Pomodoro, mozzarella, tonno, cipolla", p: "€ 6,50", all: ['G', 'L', 'P'] },
-    { name: "Patatosa", ing: "Pomodoro, mozzarella, patate fritte", p: "€ 6,00", all: ['G', 'L'] },
-    { name: "Würstel e Patatine", ing: "Pomodoro, mozzarella, würstel, patatine fritte", p: "€ 7,00", all: ['G', 'L'] },
-    { name: "Ortolana", ing: "Pomodoro, mozzarella, verdure grigliate", p: "€ 6,50", all: ['G', 'L'] },
-    { name: "Porcini", ing: "Pomodoro, mozzarella, funghi porcini", p: "€ 7,00", all: ['G', 'L'] },
-    { name: "Valtellina", ing: "Pomodoro, mozzarella, bresaola, rucola, grana", p: "€ 8,50", all: ['G', 'L'] },
-    { name: "Martinese", ing: "Pomodoro, mozzarella, funghi cardoncelli, capocollo, stracciatella", p: "€ 8,50", all: ['G', 'L'] },
-    { name: "Quattro Formaggi", ing: "Mozzarella, gorgonzola, fontina, parmigiano", p: "€ 7,50", all: ['G', 'L'] },
-    { name: "Salsiccia e Friarielli", ing: "Mozzarella, salsiccia, friarielli", p: "€ 8,00", all: ['G', 'L'] },
-    { name: "Murtazza", ing: "Mozzarella, stracciatella, mortadella, crema di pistacchio", p: "€ 8,50", all: ['G', 'L', 'F'] },
-    { name: "Panna e Crudo", ing: "Panna, mozzarella, prosciutto crudo", p: "€ 7,50", all: ['G', 'L'] },
-    { name: "Crudaiola", ing: "Pomodorini, mozzarella, prosciutto crudo, rucola, grana (tutto fuori cottura)", p: "€ 7,50", all: ['G', 'L'] },
-    { name: "Fumè", ing: "Pomodoro, mozzarella, speck, scamorza", p: "€ 7,00", all: ['G', 'L'] },
-    { name: "Queen's", ing: "Pomodoro, mozzarella, funghi, pancetta, scamorza affumicata", p: "€ 7,50", all: ['G', 'L'] }
+    { name: "Marinara", ing: "Pomodoro, aglio, origano, olio EVO", p: "€ 4,00", c: "€ 4,00", f: "€ 12,00", all: ['G'] },
+    { name: "Margherita", ing: "Pomodoro, mozzarella, basilico", p: "€ 5,00", c: "€ 5,00", f: "€ 15,00", all: ['G', 'L'] },
+    { name: "Margherita Extra", ing: "Pomodoro, mozzarella di bufala, basilico", p: "€ 7,00", c: "€ 7,00", f: "€ 21,00", all: ['G', 'L'] },
+    { name: "Napoli / Napoletana", ing: "Pomodoro, mozzarella, acciughe, origano, capperi", p: "€ 6,00", c: "€ 6,00", f: "€ 18,00", all: ['G', 'L', 'P'] },
+    { name: "Diavola", ing: "Pomodoro, mozzarella, salame piccante, olive", p: "€ 6,50", c: "€ 6,50", f: "€ 19,50", all: ['G', 'L'] },
+    { name: "Quattro Stagioni", ing: "Pomodoro, mozzarella, prosciutto cotto, funghi, carciofi, olive", p: "€ 7,00", c: "€ 7,00", f: "€ 21,00", all: ['G', 'L'] },
+    { name: "Capricciosa", ing: "Pomodoro, mozzarella, prosciutto cotto, funghi, carciofi, olive, salame piccante", p: "€ 7,50", c: "€ 7,50", f: "€ 22,50", all: ['G', 'L'] },
+    { name: "Prosciutto e Funghi", ing: "Pomodoro, mozzarella, prosciutto cotto, funghi", p: "€ 6,50", c: "€ 6,50", f: "€ 19,50", all: ['G', 'L'] },
+    { name: "Tonno e Cipolla", ing: "Pomodoro, mozzarella, tonno, cipolla", p: "€ 6,50", c: "€ 6,50", f: "€ 19,50", all: ['G', 'L', 'P'] },
+    { name: "Patatosa", ing: "Pomodoro, mozzarella, patate fritte", p: "€ 6,00", c: "€ 6,00", f: "€ 18,00", all: ['G', 'L'] },
+    { name: "Würstel e Patatine", ing: "Pomodoro, mozzarella, würstel, patatine fritte", p: "€ 7,00", c: "€ 7,00", f: "€ 21,00", all: ['G', 'L'] },
+    { name: "Ortolana", ing: "Pomodoro, mozzarella, verdure grigliate", p: "€ 6,50", c: "€ 6,50", f: "€ 19,50", all: ['G', 'L'] },
+    { name: "Porcini", ing: "Pomodoro, mozzarella, funghi porcini", p: "€ 7,00", c: "€ 7,00", f: "€ 24,00", all: ['G', 'L'] },
+    { name: "Valtellina", ing: "Pomodoro, mozzarella, bresaola, rucola, grana", p: "€ 8,50", c: "€ 8,00", f: "€ 25,50", all: ['G', 'L'] },
+    { name: "Martinese", ing: "Pomodoro, mozzarella, funghi cardoncelli, capocollo, stracciatella", p: "€ 8,50", c: "€ 8,50", f: "€ 25,50", all: ['G', 'L'] },
+    { name: "Quattro Formaggi", ing: "Mozzarella, gorgonzola, fontina, parmigiano", p: "€ 7,50", c: "€ 7,50", f: "€ 22,50", all: ['G', 'L'] },
+    { name: "Salsiccia e Friarielli", ing: "Mozzarella, salsiccia, friarielli", p: "€ 8,00", c: "€ 8,00", f: "€ 24,00", all: ['G', 'L'] },
+    { name: "Murtazza", ing: "Mozzarella, stracciatella, mortadella, crema di pistacchio", p: "€ 8,50", c: "€ 8,50", f: "€ 25,50", all: ['G', 'L', 'F'] },
+    { name: "Panna e Crudo", ing: "Panna, mozzarella, prosciutto crudo", p: "€ 7,50", c: "€ 7,50", f: "€ 22,50", all: ['G', 'L'] },
+    { name: "Crudaiola", ing: "Pomodorini, mozzarella, prosciutto crudo, rucola, grana (tutto fuori cottura)", p: "€ 7,50", c: "€ 7,50", f: "€ 22,50", all: ['G', 'L'] },
+    { name: "Fumè", ing: "Pomodoro, mozzarella, speck, scamorza", p: "€ 7,00", c: "€ 7,00", f: "€ 21,00", all: ['G', 'L'] },
+    { name: "Queen's", ing: "Pomodoro, mozzarella, funghi, pancetta, scamorza affumicata", p: "€ 7,50", c: "€ 7,50", f: "€ 22,50", all: ['G', 'L'] }
 ];
 
 const specialiData = [
@@ -132,9 +133,9 @@ const iconSVG = name => `<svg viewBox="0 0 32 32" fill="none" stroke="currentCol
 
 // Categorie del menù, nell'ordine della home
 const categorie = [
-    { id: 'pizze-classiche', title: 'Pizze Classiche', anim: 'cutter', icon: 'pizza', unit: 'pizze', sections: [{ data: pizzeData }], aggiunte: true },
+    { id: 'pizze-classiche', title: 'Pizze Classiche', anim: 'cutter', icon: 'pizza', unit: 'pizze', sections: [{ data: pizzeData, sizes: { p: 'Pizza', c: 'Calzone', f: 'Famiglia' } }], aggiunte: true },
     { id: 'pizze-speciali', title: 'Pizze Speciali', anim: 'crown', icon: 'crown', unit: 'pizze', sections: [{ data: specialiData }] },
-    { id: 'fritti', title: 'I Nostri Fritti', anim: 'fries', icon: 'fries', unit: 'fritti', sections: [{ data: frittiData, sizes: ['Piccola', 'Grande'] }] },
+    { id: 'fritti', title: 'I Nostri Fritti', anim: 'fries', icon: 'fries', unit: 'fritti', sections: [{ data: frittiData, sizes: { p: 'Piccola', g: 'Grande' } }] },
     { id: 'tranci', title: 'Pizze al Trancio', anim: 'trancio', icon: 'trancio', unit: 'tranci', sections: [{ data: tranciData }] },
     { id: 'panzerotti', title: 'Panzerotti Fritti', anim: 'panzerotto', icon: 'panzerotto', unit: 'panzerotti', sections: [{ data: panzerottiData }] },
     { id: 'bevande', title: 'Bevande', anim: 'cola', icon: 'drink', unit: 'bevande', sections: [
@@ -151,10 +152,11 @@ function allergenIcons(arr) {
     ).join('')}</div>`;
 }
 
-// Voce di menù: nome ····· prezzo (una o due colonne), ingredienti, allergeni
+// Voce di menù: nome ····· prezzo (una o più colonne), ingredienti, allergeni
+// sizes = { chiave prezzo: etichetta colonna }, es. { p: 'Piccola', g: 'Grande' }
 function itemHTML(p, i, sizes) {
     const prices = sizes
-        ? `<span class="item-price price-col">${p.p}</span><span class="item-price price-col">${p.g || ''}</span>`
+        ? Object.keys(sizes).map(k => `<span class="item-price price-col">${p[k] || ''}</span>`).join('')
         : `<span class="item-price">${p.p}</span>`;
     return `
         <div class="item" style="--i:${i}">
@@ -200,7 +202,7 @@ function renderMenu() {
         let i = 0;
         const sections = c.sections.map(s => `
             ${s.title ? `<h3 class="subsection-title">${s.title}</h3>` : ''}
-            ${s.sizes ? `<div class="size-head">${s.sizes.map(t => `<span>${t}</span>`).join('')}</div>` : ''}
+            ${s.sizes ? `<div class="size-head">${Object.values(s.sizes).map(t => `<span>${t}</span>`).join('')}</div>` : ''}
             ${s.data.map(p => itemHTML(p, i++, s.sizes)).join('')}
         `).join('');
         return `
