@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <!-- Sicurezza: solo risorse dal sito stesso, nessuno script inline, nessun form, nessun iframe -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; font-src 'self'; img-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Il menù di Queen's, pizzeria a Francavilla Fontana: pizze classiche e speciali, tranci, panzerotti, fritti e bevande.">
+    <title>Queen's - Pizzeria Francavilla Fontana</title>
+    <link rel="preload" href="assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <!-- OVERLAY ANIMAZIONE -->
+    <div id="animation-overlay" aria-hidden="true"></div>
+
+    <main class="container">
+        <!-- HOME -->
+        <section id="home" class="view active">
+            <header class="hero">
+                <svg class="hero-crown" viewBox="0 0 48 34" fill="currentColor" aria-hidden="true">
+                    <path d="M24 0l1.6 3.3 3.6.5-2.6 2.5.6 3.6L24 8.2l-3.2 1.7.6-3.6-2.6-2.5 3.6-.5z"/>
+                    <path d="M5 30 2 13l11 8 11-12 11 12 11-8-3 17z"/>
+                    <rect x="5" y="31" width="38" height="3" rx="1.5"/>
+                </svg>
+                <h1 class="hero-title">QUEEN'S</h1>
+                <div class="hero-sub">MENÙ</div>
+                <p class="hero-tagline">Pizza, fritti e panzerotti: quello che portiamo in tavola dal 2001.</p>
+            </header>
+
+            <h2 class="section-label">Scegli una categoria</h2>
+            <div class="cards" id="category-cards"></div>
+
+            <footer class="footer">
+                <svg class="footer-crown" viewBox="0 0 48 34" fill="currentColor" aria-hidden="true">
+                    <path d="M5 30 2 13l11 8 11-12 11 12 11-8-3 17z"/>
+                </svg>
+                <div class="footer-name">QUEEN'S</div>
+                <p>Via Regina Elena, 62<br>Francavilla Fontana (BR)</p>
+                <p>Tutti i giorni · 16:00 – 00:00<br>Mercoledì chiuso</p>
+                <p class="footer-note">Coperto € 1,00 per il servizio al tavolo</p>
+            </footer>
+        </section>
+
+        <!-- Le pagine delle categorie vengono generate da JS -->
+        <div id="category-views"></div>
+    </main>
+
+    <script src="assets/menu.js" defer></script>
+</body>
+</html>
